@@ -3,15 +3,15 @@
 // ===========================
 const kegiatanDetail = {
     "kerja_bakti": {
-        title: "🧹 Kerja Bakti",
+        title: "Kerja Bakti",
         text: "Kerja Bakti rutin dilaksanakan setiap Minggu pagi bersama seluruh warga desa. Fokus kegiatan meliputi pembersihan saluran irigasi, pengecatan fasilitas umum, dan penanaman pohon di sepanjang jalan desa. Melalui kegiatan ini, rasa kebersamaan dan kepedulian terhadap lingkungan terus dipupuk."
     },
     "pengajian": {
-        title: "⚽ Futsal Bersama",
+        title: "Futsal Bersama",
         text: "Kompetisi futsal antar RT dan RW di Desa Manisharjo yang diadakan setiap bulan. Selain sebagai sarana olahraga, kegiatan ini menjadi media pemersatu pemuda lintas dusun. Turnamen akhir tahun juga menjadi agenda besar yang dinantikan seluruh warga."
     },
     "lomba": {
-        title: "🏆 Lomba & Event",
+        title: "Lomba & Event",
         text: "Rangkaian kegiatan lomba dan event mencakup peringatan HUT RI, festival budaya lokal, serta kompetisi kreativitas pemuda. Karang Taruna FREEDOM secara aktif menjadi panitia dan penggerak utama setiap penyelenggaraan event desa."
     }
 };
@@ -92,6 +92,30 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link[data-section]');
 const bnavItems = document.querySelectorAll('.bnav-item[data-section]');
 const backToTopBtn = document.getElementById('backToTop');
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+    const nextTheme = theme === 'light' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+
+    if (themeToggle) {
+        const isLight = nextTheme === 'light';
+        themeToggle.setAttribute('aria-pressed', isLight);
+        themeToggle.setAttribute('aria-label', isLight ? 'Ganti mode gelap' : 'Ganti mode terang');
+    }
+}
+
+const savedTheme = localStorage.getItem('siteTheme');
+applyTheme(savedTheme || 'dark');
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('siteTheme', nextTheme);
+        applyTheme(nextTheme);
+    });
+}
 
 function onScroll() {
     // Navbar shrink effect
@@ -186,6 +210,8 @@ const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
 
 function showDetail(key) {
+    if (!modalKegiatan || !modalTitle || !modalText) return;
+
     if (!kegiatanDetail[key]) {
         console.error("Data kegiatan tidak ditemukan untuk key:", key);
         return;
@@ -202,6 +228,8 @@ function showDetail(key) {
 }
 
 function closeModalKegiatan() {
+    if (!modalKegiatan) return;
+
     modalKegiatan.classList.remove('active');
     setTimeout(() => {
         modalKegiatan.style.display = 'none';
@@ -224,6 +252,8 @@ let pengurusExpanded = false;
 function togglePengurus() {
     pengurusExpanded = !pengurusExpanded;
     const grid = document.getElementById('pengurusGrid');
+    if (!grid) return;
+
     const extras = grid.querySelectorAll('.pengurus-extra');
     const btnText = document.getElementById('btnPengurusText');
     const btnIcon = document.getElementById('btnPengurusIcon');
@@ -235,7 +265,7 @@ function togglePengurus() {
     }
     
     if (btnIcon) {
-        btnIcon.textContent = pengurusExpanded ? '↑' : '↓';
+        btnIcon.textContent = pengurusExpanded ? '^' : 'v';
     }
 }
 
@@ -267,6 +297,8 @@ function setGaleriView(mode) {
 // ===========================
 function toggleGaleri() {
     const grid = document.getElementById('driveContent');
+    if (!grid) return;
+
     const btnText = document.getElementById('btnGaleriText');
     const expanded = grid.classList.toggle('show-all');
     
@@ -304,7 +336,12 @@ function renderDrive() {
 
     // 3. Render Breadcrumb
     if (breadcrumb) {
-        let breadHtml = `<span onclick="goRoot()" style="cursor:pointer;">📁 Galeri Utama</span>`;
+        let breadHtml = `<span onclick="goRoot()" style="cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:4px;">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Galeri Utama
+        </span>`;
         currentPath.forEach((folder, index) => {
             breadHtml += `  /  <span onclick="goPath(${index})" style="cursor:pointer;">${folder}</span>`;
         });
@@ -332,7 +369,7 @@ function renderDrive() {
         // Render Foto
         currentData.forEach((imgSrc, i) => {
             createItem(
-                `<img src="${imgSrc}" class="file-thumb" alt="Foto ${i + 1}" onerror="this.src='https://via.placeholder.com/150'">
+                `<img src="${imgSrc}" class="file-thumb" alt="Foto ${i + 1}" loading="lazy" onerror="this.src='https://via.placeholder.com/150/111111/ffd700?text=Foto'">
                  <div class="item-name">Foto ${i + 1}</div>`,
                 i,
                 () => openImgModal(imgSrc)
@@ -342,7 +379,9 @@ function renderDrive() {
         // Render Folder
         keys.forEach((key, i) => {
             createItem(
-                `<span class="folder-icon" aria-hidden="true">📂</span>
+                `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon" style="margin:0 auto 8px;">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
                  <div class="item-name">${key}</div>`,
                 i,
                 () => {

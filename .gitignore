@@ -1,0 +1,26 @@
+# Editor / IDE lokal
+.vscode/
+.idea/
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log dan file sementara
+*.log
+logs/
+*.tmp
+*.temp
+.cache/
+.tmp/
+
+# Dependency / hasil build jika nanti proyek memakai tooling
+node_modules/
+dist/
+build/
+
+# Environment lokal
+.env
+.env.*
+!.env.example

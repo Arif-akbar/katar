@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karang Taruna FREEDOM · Manisharjo</title>
+    <meta name="description" content="Website resmi Karang Taruna FREEDOM Manisharjo: informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi organisasi pemuda desa." />
+    <meta property="og:title" content="Karang Taruna FREEDOM Manisharjo" />
+    <meta property="og:description" content="Informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi Karang Taruna FREEDOM Manisharjo." />
+    <meta property="og:image" content="img/hero.jpeg" />
+    <meta property="og:type" content="website" />
+    <title>Karang Taruna FREEDOM - Manisharjo</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +23,15 @@
     ============================= -->
     <div class="announcement-bar" id="announcementBar">
         <div class="announcement-inner">
-            <span class="ann-icon">📢</span>
-            <span class="ann-text">Rapat Koordinasi Bulanan — Sabtu, 7 Juni 2026 · Balai Desa, 19.00 WIB</span>
+            <span class="ann-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+            </span>
+            <span class="ann-text">Rapat Koordinasi Bulanan - Minggu, 7 Juni 2026 - Balai Desa, 19.00 WIB</span>
         </div>
-        <button class="ann-close" onclick="closeAnnouncement()" aria-label="Tutup pengumuman">×</button>
+        <button class="ann-close" onclick="closeAnnouncement()" aria-label="Tutup pengumuman">&times;</button>
     </div>
 
     <!-- ============================
@@ -43,6 +53,10 @@
                 <a href="#lokasi" class="nav-link" data-section="lokasi">Lokasi</a>
             </nav>
 
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti mode terang" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
+
             <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -57,7 +71,12 @@
         <div class="container hero-grid">
             <div class="hero-text">
                 <div class="badge-row">
-                    <span class="badge">🔥 Semangat Pemuda Desa</span>
+                    <span class="badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        Semangat Pemuda Desa
+                    </span>
                 </div>
                 <h1>Karang Taruna<br><em>MANISHARJO</em></h1>
                 <p class="hero-desc">Membangun generasi muda yang berkarakter, kreatif, dan berkontribusi nyata untuk kemajuan desa Manisharjo.</p>
@@ -87,10 +106,14 @@
 
             <div class="hero-img" aria-hidden="true">
                 <div class="img-frame">
-                    <img src="img/hero.jpeg" alt="Foto anggota Karang Taruna FREEDOM Manisharjo"
-                        onerror="this.src='https://via.placeholder.com/560x420/2d5a27/ffffff?text=FREEDOM'" />
+                    <img src="img/hero.jpeg" alt="Foto anggota Karang Taruna FREEDOM Manisharjo" fetchpriority="high"
+                        onerror="this.src='https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM'" />
                     <div class="img-badge">
-                        <span>🏡</span> Desa Manisharjo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Desa Manisharjo
                     </div>
                 </div>
             </div>
@@ -98,7 +121,7 @@
 
         <!-- Scroll indicator -->
         <a href="#visi" class="scroll-down" aria-label="Scroll ke bawah">
-            <span class="scroll-arrow">↓</span>
+            <span class="scroll-arrow">&darr;</span>
         </a>
     </section>
 
@@ -116,7 +139,13 @@
             <div class="visi-misi-grid">
                 <div class="card card-visi reveal">
                     <div class="card-accent" aria-hidden="true"></div>
-                    <span class="card-emoji" aria-hidden="true">🎯</span>
+                    <span class="card-emoji" aria-hidden="true">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </span>
                     <h3>Visi</h3>
                     <blockquote>
                         "Mewujudkan pemuda Manisharjo yang berkarakter, mandiri, berdaya saing global, serta memiliki kepedulian tinggi terhadap lingkungan sosial."
@@ -125,7 +154,13 @@
 
                 <div class="card card-misi reveal">
                     <div class="card-accent" aria-hidden="true"></div>
-                    <span class="card-emoji" aria-hidden="true">🚀</span>
+                    <span class="card-emoji" aria-hidden="true">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </span>
                     <h3>Misi</h3>
                     <ul class="misi-list">
                         <li>
@@ -160,45 +195,45 @@
             <div class="kegiatan-grid">
                 <article class="kegiatan-card reveal" tabindex="0">
                     <div class="kegiatan-img-wrap">
-                        <img src="img/program/gotongroyong.jpeg" alt="Kegiatan Kerja Bakti" class="card-img"
-                            onerror="this.src='https://via.placeholder.com/480x320/4a7c59/fff?text=Kerja+Bakti'">
+                        <img src="img/program/gotongroyong.jpeg" alt="Kegiatan Kerja Bakti" class="card-img" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/480x320/111111/ffd700?text=Kerja+Bakti'">
                         <span class="kegiatan-tag">Sosial</span>
                     </div>
                     <div class="kegiatan-content">
                         <h3>Kerja Bakti</h3>
                         <p>Bersih Lingkungannya, Kuat Kebersamaannya</p>
                         <button class="btn-text" onclick="showDetail('kerja_bakti')">
-                            Baca Selengkapnya <span class="arrow">→</span>
+                            Baca Selengkapnya <span class="arrow">&rarr;</span>
                         </button>
                     </div>
                 </article>
 
                 <article class="kegiatan-card reveal" tabindex="0">
                     <div class="kegiatan-img-wrap">
-                        <img src="img/program/futsal.jpeg" alt="Kegiatan Futsal" class="card-img"
-                            onerror="this.src='https://via.placeholder.com/480x320/4a7c59/fff?text=Futsal'">
+                        <img src="img/program/futsal.jpeg" alt="Kegiatan Futsal" class="card-img" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/480x320/b80000/ffd700?text=Futsal'">
                         <span class="kegiatan-tag">Olahraga</span>
                     </div>
                     <div class="kegiatan-content">
                         <h3>Futsal</h3>
                         <p>Bersatu di Lapangan, Solid dalam Kebersamaan</p>
                         <button class="btn-text" onclick="showDetail('pengajian')">
-                            Baca Selengkapnya <span class="arrow">→</span>
+                            Baca Selengkapnya <span class="arrow">&rarr;</span>
                         </button>
                     </div>
                 </article>
 
                 <article class="kegiatan-card reveal" tabindex="0">
                     <div class="kegiatan-img-wrap">
-                        <img src="img/program/pemuda.jpeg" alt="Lomba dan Event Pemuda" class="card-img"
-                            onerror="this.src='https://via.placeholder.com/480x320/4a7c59/fff?text=Lomba+Event'">
+                        <img src="img/program/pemuda.jpeg" alt="Lomba dan Event Pemuda" class="card-img" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/480x320/111111/e21b1b?text=Lomba+Event'">
                         <span class="kegiatan-tag">Kreativitas</span>
                     </div>
                     <div class="kegiatan-content">
                         <h3>Lomba & Event</h3>
                         <p>Wadah kreativitas dan kompetisi positif pemuda.</p>
                         <button class="btn-text" onclick="showDetail('lomba')">
-                            Baca Selengkapnya <span class="arrow">→</span>
+                            Baca Selengkapnya <span class="arrow">&rarr;</span>
                         </button>
                     </div>
                 </article>
@@ -212,7 +247,7 @@
             <div class="modal-header">
                 <h3 id="modalTitle">Judul Kegiatan</h3>
                 <button class="modal-close-btn" onclick="closeModalKegiatan()" aria-label="Tutup">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -238,8 +273,8 @@
             <div class="pengurus-grid" id="pengurusGrid">
                 <div class="profile-card reveal">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/arif.jpeg" alt="Arif Akbarudin - Ketua"
-                            onerror="this.src='https://via.placeholder.com/120/2d5a27/fff?text=AA'">
+                        <img src="img/pengurus/arif.jpeg" alt="Arif Akbarudin - Ketua" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/111111/ffd700?text=AA'">
                     </div>
                     <div class="profile-info">
                         <h3>Arif Akbarudin</h3>
@@ -249,8 +284,8 @@
 
                 <div class="profile-card reveal">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/febri.jpeg" alt="Febri - Wakil Ketua"
-                            onerror="this.src='https://via.placeholder.com/120/4a7c59/fff?text=FB'">
+                        <img src="img/pengurus/febri.jpeg" alt="Febri - Wakil Ketua" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/b80000/ffffff?text=FB'">
                     </div>
                     <div class="profile-info">
                         <h3>Febri</h3>
@@ -260,8 +295,8 @@
 
                 <div class="profile-card reveal pengurus-extra">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/isti.jpeg" alt="Isti Maulia H - Sekretaris 1"
-                            onerror="this.src='https://via.placeholder.com/120/7a9e7e/fff?text=IM'">
+                        <img src="img/pengurus/isti.jpeg" alt="Isti Maulia H - Sekretaris 1" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/ffd700/111111?text=IM'">
                     </div>
                     <div class="profile-info">
                         <h3>Isti Maulia H</h3>
@@ -271,8 +306,8 @@
 
                 <div class="profile-card reveal pengurus-extra">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/aziz.jpeg" alt="Wildhan Thoriq Aziz - Sekretaris 2"
-                            onerror="this.src='https://via.placeholder.com/120/7a9e7e/fff?text=WA'">
+                        <img src="img/pengurus/aziz.jpeg" alt="Wildhan Thoriq Aziz - Sekretaris 2" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/ffd700/111111?text=WA'">
                     </div>
                     <div class="profile-info">
                         <h3>Wildhan Thoriq Aziz</h3>
@@ -282,8 +317,8 @@
 
                 <div class="profile-card reveal pengurus-extra">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/hafiz.jpeg" alt="Hafizh Harfiansyah - Bendahara 1"
-                            onerror="this.src='https://via.placeholder.com/120/c8963e/fff?text=HH'">
+                        <img src="img/pengurus/hafiz.jpeg" alt="Hafizh Harfiansyah - Bendahara 1" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/111111/ffd700?text=HH'">
                     </div>
                     <div class="profile-info">
                         <h3>Hafizh Harfiansyah</h3>
@@ -293,8 +328,8 @@
 
                 <div class="profile-card reveal pengurus-extra">
                     <div class="profile-avatar">
-                        <img src="img/pengurus/fery.jpeg" alt="Feri Nur Ardian - Bendahara 2"
-                            onerror="this.src='https://via.placeholder.com/120/c8963e/fff?text=FN'">
+                        <img src="img/pengurus/fery.jpeg" alt="Feri Nur Ardian - Bendahara 2" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/120/b80000/ffffff?text=FN'">
                     </div>
                     <div class="profile-info">
                         <h3>Feri Nur Ardian</h3>
@@ -304,9 +339,9 @@
             </div>
 
             <div class="center-btn mt-40">
-                <button id="btnPengurus" class="btn btn-outline-green" onclick="togglePengurus()">
+                <button id="btnPengurus" class="btn btn-outline-red" onclick="togglePengurus()">
                     <span id="btnPengurusText">Lihat Semua Pengurus</span>
-                    <span class="btn-icon" id="btnPengurusIcon">↓</span>
+                    <span class="btn-icon" id="btnPengurusIcon">&darr;</span>
                 </button>
             </div>
         </div>
@@ -326,8 +361,8 @@
             <div class="galeri-toolbar">
                 <div class="breadcrumb" id="breadcrumb"></div>
                 <div class="galeri-view-toggle" role="group" aria-label="Tampilan galeri">
-                    <button class="view-btn active" id="btnGrid" onclick="setGaleriView('grid')" title="Grid view" aria-pressed="true">⊞</button>
-                    <button class="view-btn" id="btnList" onclick="setGaleriView('list')" title="List view" aria-pressed="false">☰</button>
+                    <button class="view-btn active" id="btnGrid" onclick="setGaleriView('grid')" title="Grid view" aria-pressed="true">Grid</button>
+                    <button class="view-btn" id="btnList" onclick="setGaleriView('list')" title="List view" aria-pressed="false">List</button>
                 </div>
             </div>
 
@@ -338,7 +373,7 @@
             <div class="center-btn mt-40">
                 <button id="btnGaleri" class="btn btn-primary" onclick="toggleGaleri()">
                     <span id="btnGaleriText">Lihat Lebih Banyak</span>
-                    <span class="btn-icon">↓</span>
+                    <span class="btn-icon">&darr;</span>
                 </button>
             </div>
         </div>
@@ -346,7 +381,7 @@
 
     <!-- Modal Gambar -->
     <div class="modal-overlay" id="imgModal" role="dialog" aria-modal="true" aria-label="Foto besar">
-        <button class="close-img-modal" onclick="closeImgModal()" aria-label="Tutup foto">×</button>
+        <button class="close-img-modal" onclick="closeImgModal()" aria-label="Tutup foto">&times;</button>
         <div class="img-modal-wrap">
             <img id="modalImg" class="modal-img-content" alt="Dokumentasi kegiatan" />
         </div>
@@ -373,26 +408,43 @@
 
                 <div class="location-info">
                     <div class="location-detail-row">
-                        <span class="loc-icon" aria-hidden="true">📍</span>
+                        <span class="loc-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </span>
                         <div>
                             <strong>Alamat</strong>
                             <p>Dukuh Manisharjo, Kecamatan Bendosari,<br>Kabupaten Sukoharjo, Jawa Tengah.</p>
                         </div>
                     </div>
                     <div class="location-detail-row">
-                        <span class="loc-icon" aria-hidden="true">🕐</span>
+                        <span class="loc-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </span>
                         <div>
                             <strong>Sekretariat</strong>
-                            <p>Senin – Jumat, 18.00 – 21.00 WIB</p>
+                            <p>Senin - Jumat, 18.00 - 21.00 WIB</p>
                         </div>
                     </div>
                     <div class="location-actions">
                         <a href="https://maps.app.goo.gl/f5u6bpwCPXjp7rHX7" target="_blank" rel="noopener" class="btn btn-primary loc-btn">
-                            🗺️ Buka di Maps
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                            </svg>
+                            Buka di Maps
                         </a>
-                        <a href="https://www.bing.com/ck/a?!&&p=e5505195553ed08b7e2675af9f19e8813289e367c998c1ab4690edeb29ecdc53JmltdHM9MTc3MDc2ODAwMA&ptn=3&ver=2&hsh=4&fclid=1de887ff-be63-643c-11ce-94e8ba636a86&psq=asal+usul+desa+jogodengkul%2c+manisharjo&u=a1aHR0cHM6Ly9zb2xvLnRyaWJ1bm5ld3MuY29tLzIwMjUvMDUvMTQvYXNhbC11c3VsLWRlc2EtbWFuaXNoYXJqby1kaS1iZW5kb3Nhcmktc3Vrb2hhcmpvLWR1bHUtbmFtYW55YS1qb2dvLWRlbmdrdWwtbGFsdS1kaXViYWgta2VyYXRvbi1zb2xv"
-                            target="_blank" rel="noopener" class="btn btn-ghost-green loc-btn">
-                            📖 Asal Usul Desa
+                        <a href="https://solo.tribunnews.com/2025/05/14/asal-usul-desa-manisharjo-di-bendosari-sukoharjo-dulu-namanya-jogo-dengkul-lalu-diubah-keraton-solo"
+                            target="_blank" rel="noopener" class="btn btn-ghost-red loc-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Asal Usul Desa
                         </a>
                     </div>
                 </div>
@@ -407,7 +459,7 @@
         <div class="container footer-inner">
             <div class="footer-brand">
                 <span class="footer-logo">FREEDOM<span>.</span></span>
-                <p>Karang Taruna Manisharjo<br>Bendosari · Sukoharjo · Jawa Tengah</p>
+                <p>Karang Taruna Manisharjo<br>Bendosari - Sukoharjo - Jawa Tengah</p>
             </div>
             <div class="footer-links">
                 <a href="#home">Beranda</a>
@@ -418,7 +470,7 @@
                 <a href="#lokasi">Lokasi</a>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Karang Taruna FREEDOM Manisharjo. Dibuat dengan semangat pemuda desa. 🌿</p>
+                <p>&copy; 2026 Karang Taruna FREEDOM Manisharjo. Dibuat dengan semangat pemuda desa.</p>
             </div>
         </div>
     </footer>
@@ -428,208 +480,57 @@
     ============================= -->
     <nav class="bottom-nav" id="bottomNav" aria-label="Navigasi bawah">
         <a href="#home" class="bnav-item active" data-section="home">
-            <span class="bnav-icon" aria-hidden="true">🏠</span>
+            <span class="bnav-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </span>
             <span class="bnav-label">Beranda</span>
         </a>
         <a href="#kegiatan" class="bnav-item" data-section="kegiatan">
-            <span class="bnav-icon" aria-hidden="true">⚡</span>
+            <span class="bnav-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </span>
             <span class="bnav-label">Kegiatan</span>
         </a>
         <a href="#galeri" class="bnav-item" data-section="galeri">
-            <span class="bnav-icon" aria-hidden="true">🖼️</span>
+            <span class="bnav-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+            </span>
             <span class="bnav-label">Galeri</span>
         </a>
         <a href="#pengurus" class="bnav-item" data-section="pengurus">
-            <span class="bnav-icon" aria-hidden="true">👥</span>
+            <span class="bnav-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+            </span>
             <span class="bnav-label">Pengurus</span>
         </a>
         <a href="#lokasi" class="bnav-item" data-section="lokasi">
-            <span class="bnav-icon" aria-hidden="true">📍</span>
+            <span class="bnav-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </span>
             <span class="bnav-label">Lokasi</span>
         </a>
     </nav>
 
     <!-- Back to top button -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">↑</button>
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">&uarr;</button>
 
     <script src="script.js"></script>
-    <script>
-        // ===========================
-        // ANNOUNCEMENT BAR
-        // ===========================
-        function closeAnnouncement() {
-            const bar = document.getElementById('announcementBar');
-            bar.style.maxHeight = bar.scrollHeight + 'px';
-            requestAnimationFrame(() => {
-                bar.style.transition = 'max-height 0.35s ease, opacity 0.25s ease';
-                bar.style.maxHeight = '0';
-                bar.style.opacity = '0';
-            });
-            setTimeout(() => bar.remove(), 400);
-        }
-
-        // ===========================
-        // NAVBAR: scroll shrink + active
-        // ===========================
-        const navbar = document.getElementById('navbar');
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link[data-section]');
-        const bnavItems = document.querySelectorAll('.bnav-item[data-section]');
-
-        function onScroll() {
-            // shrink
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
-            // back to top
-            document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
-
-            // active nav
-            let current = '';
-            sections.forEach(sec => {
-                if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-            });
-            navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === current));
-            bnavItems.forEach(l => l.classList.toggle('active', l.dataset.section === current));
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-
-        // ===========================
-        // MOBILE MENU TOGGLE
-        // ===========================
-        const toggle = document.getElementById('menuToggle');
-        const menu = document.getElementById('navMenu');
-        toggle.addEventListener('click', () => {
-            const open = menu.classList.toggle('active');
-            toggle.classList.toggle('open', open);
-            toggle.setAttribute('aria-expanded', open);
-            document.body.classList.toggle('menu-open', open);
-        });
-        // close on link click
-        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            menu.classList.remove('active');
-            toggle.classList.remove('open');
-            toggle.setAttribute('aria-expanded', false);
-            document.body.classList.remove('menu-open');
-        }));
-
-        // ===========================
-        // SCROLL REVEAL
-        // ===========================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('revealed');
-                    revealObserver.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // ===========================
-        // GALERI VIEW TOGGLE
-        // ===========================
-        function setGaleriView(mode) {
-            const grid = document.getElementById('driveContent');
-            grid.classList.toggle('list-view', mode === 'list');
-            document.getElementById('btnGrid').classList.toggle('active', mode === 'grid');
-            document.getElementById('btnGrid').setAttribute('aria-pressed', mode === 'grid');
-            document.getElementById('btnList').classList.toggle('active', mode === 'list');
-            document.getElementById('btnList').setAttribute('aria-pressed', mode === 'list');
-        }
-
-        // ===========================
-        // PENGURUS TOGGLE
-        // ===========================
-        let pengurusExpanded = false;
-        function togglePengurus() {
-            pengurusExpanded = !pengurusExpanded;
-            const grid = document.getElementById('pengurusGrid');
-            const extras = grid.querySelectorAll('.pengurus-extra');
-            const btn = document.getElementById('btnPengurusText');
-            const icon = document.getElementById('btnPengurusIcon');
-            extras.forEach(el => el.classList.toggle('visible', pengurusExpanded));
-            btn.textContent = pengurusExpanded ? 'Sembunyikan' : 'Lihat Semua Pengurus';
-            icon.textContent = pengurusExpanded ? '↑' : '↓';
-        }
-
-        // ===========================
-        // GALERI TOGGLE (fallback for script.js)
-        // ===========================
-        function toggleGaleri() {
-            const grid = document.getElementById('driveContent');
-            const expanded = grid.classList.toggle('show-all');
-            document.getElementById('btnGaleriText').textContent = expanded ? 'Sembunyikan' : 'Lihat Lebih Banyak';
-        }
-
-        // ===========================
-        // MODAL KEGIATAN
-        // ===========================
-        const kegiatanData = {
-            kerja_bakti: {
-                title: '🧹 Kerja Bakti',
-                text: 'Kerja Bakti rutin dilaksanakan setiap Minggu pagi bersama seluruh warga desa. Fokus kegiatan meliputi pembersihan saluran irigasi, pengecatan fasilitas umum, dan penanaman pohon di sepanjang jalan desa. Melalui kegiatan ini, rasa kebersamaan dan kepedulian terhadap lingkungan terus dipupuk.'
-            },
-            pengajian: {
-                title: '⚽ Futsal Bersama',
-                text: 'Kompetisi futsal antar RT dan RW di Desa Manisharjo yang diadakan setiap bulan. Selain sebagai sarana olahraga, kegiatan ini menjadi media pemersatu pemuda lintas dusun. Turnamen akhir tahun juga menjadi agenda besar yang dinantikan seluruh warga.'
-            },
-            lomba: {
-                title: '🏆 Lomba & Event',
-                text: 'Rangkaian kegiatan lomba dan event mencakup peringatan HUT RI, festival budaya lokal, serta kompetisi kreativitas pemuda. Karang Taruna FREEDOM secara aktif menjadi panitia dan penggerak utama setiap penyelenggaraan event desa.'
-            }
-        };
-
-        function showDetail(id) {
-            const data = kegiatanData[id];
-            if (!data) return;
-            document.getElementById('modalTitle').textContent = data.title;
-            document.getElementById('modalText').textContent = data.text;
-            const overlay = document.getElementById('kegiatanModal');
-            overlay.style.display = 'flex';
-            requestAnimationFrame(() => overlay.classList.add('active'));
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModalKegiatan() {
-            const overlay = document.getElementById('kegiatanModal');
-            overlay.classList.remove('active');
-            setTimeout(() => { overlay.style.display = 'none'; }, 300);
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('kegiatanModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModalKegiatan();
-        });
-
-        // ===========================
-        // MODAL GAMBAR
-        // ===========================
-        function openImgModal(src) {
-            document.getElementById('modalImg').src = src;
-            const overlay = document.getElementById('imgModal');
-            overlay.style.display = 'flex';
-            requestAnimationFrame(() => overlay.classList.add('active'));
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeImgModal() {
-            const overlay = document.getElementById('imgModal');
-            overlay.classList.remove('active');
-            setTimeout(() => { overlay.style.display = 'none'; }, 300);
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('imgModal').addEventListener('click', function(e) {
-            if (e.target === this || e.target.id === 'imgModal') closeImgModal();
-        });
-
-        // Keyboard ESC closes modals
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') {
-                closeModalKegiatan();
-                closeImgModal();
-            }
-        });
-    </script>
 </body>
 </html>
