@@ -1,92 +1,283 @@
-// DATA DETAIL KEGIATAN (Untuk Modal)
+// ===========================
+// DATA DETAIL KEGIATAN
+// ===========================
 const kegiatanDetail = {
     "kerja_bakti": {
-        title: "Kerja Bakti Lingkungan",
-        text: "Bentuk kepedulian generasi muda terhadap kebersihan dan keindahan lingkungan. Kegiatan ini bertujuan untuk menumbuhkan semangat gotong royong dan rasa tanggung jawab sosial."
+        title: "🧹 Kerja Bakti",
+        text: "Kerja Bakti rutin dilaksanakan setiap Minggu pagi bersama seluruh warga desa. Fokus kegiatan meliputi pembersihan saluran irigasi, pengecatan fasilitas umum, dan penanaman pohon di sepanjang jalan desa. Melalui kegiatan ini, rasa kebersamaan dan kepedulian terhadap lingkungan terus dipupuk."
     },
     "pengajian": {
-        title: "Futsal Pemuda Freedom",
-        text: "Diselenggarakan sebagai wadah pengembangan minat dan bakat olahraga, sekaligus untuk meningkatkan kebersamaan, sportivitas, dan solidaritas antar pemuda."
+        title: "⚽ Futsal Bersama",
+        text: "Kompetisi futsal antar RT dan RW di Desa Manisharjo yang diadakan setiap bulan. Selain sebagai sarana olahraga, kegiatan ini menjadi media pemersatu pemuda lintas dusun. Turnamen akhir tahun juga menjadi agenda besar yang dinantikan seluruh warga."
     },
     "lomba": {
-        title: "Lomba & Event Tahunan",
-        text: "Termasuk perayaan 17 Agustus, Pentas Seni Akhir Tahun. Event ini dikelola sepenuhnya oleh panitia dari Karang Taruna sebagai wadah pembelajaran manajemen organisasi dan acara."
+        title: "🏆 Lomba & Event",
+        text: "Rangkaian kegiatan lomba dan event mencakup peringatan HUT RI, festival budaya lokal, serta kompetisi kreativitas pemuda. Karang Taruna FREEDOM secara aktif menjadi panitia dan penggerak utama setiap penyelenggaraan event desa."
     }
 };
 
+// ===========================
 // DATA GALERI (Simulasi Folder Drive)
+// ===========================
 const driveData = {
     "Kegiatan 2025": {
-        "Futsal": ["img/gallery/2025/futsal/1.jpeg", "img/gallery/2025/futsal/2.jpeg", "img/gallery/2025/futsal/3.jpeg", "img/gallery/2025/futsal/4.jpeg", "img/gallery/2025/futsal/5.jpeg"],
-        "Gerak Jalan": ["img/gallery/2025/gerak-jalan/1.jpeg", "img/gallery/2025/gerak-jalan/2.jpeg", "img/gallery/2025/gerak-jalan/3.jpeg", "img/gallery/2025/gerak-jalan/4.jpeg", "img/gallery/2025/gerak-jalan/5.jpeg", "img/gallery/2025/gerak-jalan/6.jpeg", "img/gallery/2025/gerak-jalan/7.jpeg", "img/gallery/2025/gerak-jalan/8.jpeg", "img/gallery/2025/gerak-jalan/9.jpeg"],
-        "Pentas Seni": ["img/gallery/2025/pentas-seni/1.jpeg", "img/gallery/2025/pentas-seni/2.jpeg", "img/gallery/2025/pentas-seni/3.jpeg", "img/gallery/2025/pentas-seni/4.jpeg", "img/gallery/2025/pentas-seni/5.jpeg"]
+        "Futsal": [
+            "img/gallery/2025/futsal/1.jpeg",
+            "img/gallery/2025/futsal/2.jpeg",
+            "img/gallery/2025/futsal/3.jpeg",
+            "img/gallery/2025/futsal/4.jpeg",
+            "img/gallery/2025/futsal/5.jpeg"
+        ],
+        "Gerak Jalan": [
+            "img/gallery/2025/gerak-jalan/1.jpeg",
+            "img/gallery/2025/gerak-jalan/2.jpeg",
+            "img/gallery/2025/gerak-jalan/3.jpeg",
+            "img/gallery/2025/gerak-jalan/4.jpeg",
+            "img/gallery/2025/gerak-jalan/5.jpeg",
+            "img/gallery/2025/gerak-jalan/6.jpeg",
+            "img/gallery/2025/gerak-jalan/7.jpeg",
+            "img/gallery/2025/gerak-jalan/8.jpeg",
+            "img/gallery/2025/gerak-jalan/9.jpeg"
+        ],
+        "Pentas Seni": [
+            "img/gallery/2025/pentas-seni/1.jpeg",
+            "img/gallery/2025/pentas-seni/2.jpeg",
+            "img/gallery/2025/pentas-seni/3.jpeg",
+            "img/gallery/2025/pentas-seni/4.jpeg",
+            "img/gallery/2025/pentas-seni/5.jpeg"
+        ]
     },
     "Dokumentasi 2026": {
-        "Kerja Bakti Masjid": ["img/gallery/2026/kerja-bakti-masjid/1.jpeg", "img/gallery/2026/kerja-bakti-masjid/2.jpeg", "img/gallery/2026/kerja-bakti-masjid/3.jpeg", "img/gallery/2026/kerja-bakti-masjid/4.jpeg", "img/gallery/2026/kerja-bakti-masjid/5.jpeg", "img/gallery/2026/kerja-bakti-masjid/6.jpeg"],
-        "Momen Ramadhan": ["img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/1.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/2.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/3.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/4.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/5.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/6.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/7.jpeg", "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/8.jpeg"]
+        "Kerja Bakti Masjid": [
+            "img/gallery/2026/kerja-bakti-masjid/1.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/2.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/3.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/4.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/5.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/6.jpeg"
+        ],
+        "Momen Ramadhan": [
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/1.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/2.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/3.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/4.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/5.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/6.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/7.jpeg",
+            "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/8.jpeg"
+        ]
     }
 };
 
-// ========================
-// NAVBAR TOGGLE
-// ========================
+// ===========================
+// ANNOUNCEMENT BAR
+// ===========================
+function closeAnnouncement() {
+    const bar = document.getElementById('announcementBar');
+    if (!bar) return;
+    bar.style.maxHeight = bar.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+        bar.style.transition = 'max-height 0.35s ease, opacity 0.25s ease';
+        bar.style.maxHeight = '0';
+        bar.style.opacity = '0';
+    });
+    setTimeout(() => bar.remove(), 400);
+}
+
+// ===========================
+// NAVBAR: Scroll Shrink + Active Section
+// ===========================
+const navbar = document.getElementById('navbar');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link[data-section]');
+const bnavItems = document.querySelectorAll('.bnav-item[data-section]');
+const backToTopBtn = document.getElementById('backToTop');
+
+function onScroll() {
+    // Navbar shrink effect
+    if (navbar) {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    
+    // Back to top button visibility
+    if (backToTopBtn) {
+        backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }
+
+    // Active navigation detection
+    let current = '';
+    sections.forEach(sec => {
+        const sectionTop = sec.offsetTop;
+        if (window.scrollY >= sectionTop - 120) {
+            current = sec.id;
+        }
+    });
+    
+    // Update nav links
+    navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === current);
+    });
+    
+    // Update bottom nav items
+    bnavItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.section === current);
+    });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// ===========================
+// MOBILE MENU TOGGLE
+// ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    // Animasi ikon burger (opsional)
-    const spans = menuToggle.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-        spans.forEach(span => span.style = '');
-    }
-});
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('open', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        
+        // Animasi ikon burger
+        const spans = menuToggle.querySelectorAll('span');
+        if (isOpen) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            spans.forEach(span => span.style = '');
+        }
+    });
+    
+    // Close menu when clicking nav links
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', false);
+            document.body.classList.remove('menu-open');
+            
+            const spans = menuToggle.querySelectorAll('span');
+            spans.forEach(span => span.style = '');
+        });
+    });
+}
 
-// ========================
+// ===========================
+// SCROLL REVEAL ANIMATION
+// ===========================
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===========================
 // MODAL KEGIATAN SYSTEM
-// ========================
+// ===========================
 const modalKegiatan = document.getElementById('kegiatanModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
 
 function showDetail(key) {
-    if (kegiatanDetail[key]) {
-        modalTitle.innerText = kegiatanDetail[key].title;
-        modalText.innerText = kegiatanDetail[key].text;
-
-        modalKegiatan.style.display = 'flex';
-        // Sedikit delay untuk animasi fade-in css
-        setTimeout(() => {
-            modalKegiatan.classList.add('active');
-        }, 10);
-    } else {
+    if (!kegiatanDetail[key]) {
         console.error("Data kegiatan tidak ditemukan untuk key:", key);
+        return;
     }
+    
+    modalTitle.textContent = kegiatanDetail[key].title;
+    modalText.textContent = kegiatanDetail[key].text;
+    
+    modalKegiatan.style.display = 'flex';
+    requestAnimationFrame(() => {
+        modalKegiatan.classList.add('active');
+    });
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModalKegiatan() {
     modalKegiatan.classList.remove('active');
     setTimeout(() => {
         modalKegiatan.style.display = 'none';
-    }, 300); // Sesuaikan dengan durasi transition CSS
+    }, 300);
+    document.body.style.overflow = '';
 }
 
 // Tutup modal jika klik area gelap
-modalKegiatan.addEventListener('click', (e) => {
-    if (e.target === modalKegiatan) closeModalKegiatan();
-});
+if (modalKegiatan) {
+    modalKegiatan.addEventListener('click', (e) => {
+        if (e.target === modalKegiatan) closeModalKegiatan();
+    });
+}
 
+// ===========================
+// PENGURUS TOGGLE
+// ===========================
+let pengurusExpanded = false;
 
-// ========================
+function togglePengurus() {
+    pengurusExpanded = !pengurusExpanded;
+    const grid = document.getElementById('pengurusGrid');
+    const extras = grid.querySelectorAll('.pengurus-extra');
+    const btnText = document.getElementById('btnPengurusText');
+    const btnIcon = document.getElementById('btnPengurusIcon');
+    
+    extras.forEach(el => el.classList.toggle('visible', pengurusExpanded));
+    
+    if (btnText) {
+        btnText.textContent = pengurusExpanded ? 'Sembunyikan' : 'Lihat Semua Pengurus';
+    }
+    
+    if (btnIcon) {
+        btnIcon.textContent = pengurusExpanded ? '↑' : '↓';
+    }
+}
+
+// ===========================
+// GALERI VIEW TOGGLE (Grid/List)
+// ===========================
+function setGaleriView(mode) {
+    const grid = document.getElementById('driveContent');
+    const btnGrid = document.getElementById('btnGrid');
+    const btnList = document.getElementById('btnList');
+    
+    if (grid) {
+        grid.classList.toggle('list-view', mode === 'list');
+    }
+    
+    if (btnGrid) {
+        btnGrid.classList.toggle('active', mode === 'grid');
+        btnGrid.setAttribute('aria-pressed', mode === 'grid');
+    }
+    
+    if (btnList) {
+        btnList.classList.toggle('active', mode === 'list');
+        btnList.setAttribute('aria-pressed', mode === 'list');
+    }
+}
+
+// ===========================
+// GALERI TOGGLE (Show More/Less)
+// ===========================
+function toggleGaleri() {
+    const grid = document.getElementById('driveContent');
+    const btnText = document.getElementById('btnGaleriText');
+    const expanded = grid.classList.toggle('show-all');
+    
+    if (btnText) {
+        btnText.textContent = expanded ? 'Sembunyikan' : 'Lihat Lebih Banyak';
+    }
+}
+
+// ===========================
 // DRIVE / GALLERY SYSTEM
-// ========================
-// ========================
-// DRIVE / GALLERY SYSTEM (FIXED)
-// ========================
+// ===========================
 let currentPath = [];
 const container = document.getElementById("driveContent");
 const breadcrumb = document.getElementById("breadcrumb");
@@ -96,10 +287,14 @@ const btnGaleri = document.getElementById("btnGaleri");
 const GALLERY_LIMIT = 3;
 
 function renderDrive() {
-    // 1. Reset Container (Kosongkan isi & Hapus status 'show-all')
+    if (!container) return;
+    
+    // 1. Reset Container
     container.innerHTML = "";
-    container.classList.remove("show-all"); // PENTING: Reset agar tertutup lagi saat refresh/pindah folder
-    if (btnGaleri) btnGaleri.innerText = "Lihat Semua Galeri";
+    container.classList.remove("show-all");
+    
+    const btnText = document.getElementById('btnGaleriText');
+    if (btnText) btnText.textContent = "Lihat Lebih Banyak";
 
     // 2. Navigasi Data (Traverse)
     let currentData = driveData;
@@ -108,11 +303,13 @@ function renderDrive() {
     });
 
     // 3. Render Breadcrumb
-    let breadHtml = `<span onclick="goRoot()">📁 Galeri Utama</span>`;
-    currentPath.forEach((folder, index) => {
-        breadHtml += `  /  <span onclick="goPath(${index})">${folder}</span>`;
-    });
-    breadcrumb.innerHTML = breadHtml;
+    if (breadcrumb) {
+        let breadHtml = `<span onclick="goRoot()" style="cursor:pointer;">📁 Galeri Utama</span>`;
+        currentPath.forEach((folder, index) => {
+            breadHtml += `  /  <span onclick="goPath(${index})" style="cursor:pointer;">${folder}</span>`;
+        });
+        breadcrumb.innerHTML = breadHtml;
+    }
 
     // 4. Siapkan Data
     const keys = Object.keys(currentData);
@@ -122,14 +319,11 @@ function renderDrive() {
     // Fungsi Helper Render Item
     const createItem = (contentHtml, index, onClickFunc) => {
         const div = document.createElement("div");
-
-        // LOGIKA KUNCI: 
-        // Jika index (0,1,2..) lebih besar atau sama dengan 3, beri kelas 'hidden-item'
         const extraClass = index >= GALLERY_LIMIT ? "drive-item hidden-item" : "drive-item";
-
         div.className = extraClass;
         div.innerHTML = contentHtml;
         div.onclick = onClickFunc;
+        div.setAttribute('role', 'listitem');
         container.appendChild(div);
     };
 
@@ -138,7 +332,7 @@ function renderDrive() {
         // Render Foto
         currentData.forEach((imgSrc, i) => {
             createItem(
-                `<img src="${imgSrc}" class="file-thumb" onerror="this.src='https://via.placeholder.com/150'">
+                `<img src="${imgSrc}" class="file-thumb" alt="Foto ${i + 1}" onerror="this.src='https://via.placeholder.com/150'">
                  <div class="item-name">Foto ${i + 1}</div>`,
                 i,
                 () => openImgModal(imgSrc)
@@ -148,7 +342,7 @@ function renderDrive() {
         // Render Folder
         keys.forEach((key, i) => {
             createItem(
-                `<span class="folder-icon">📂</span>
+                `<span class="folder-icon" aria-hidden="true">📂</span>
                  <div class="item-name">${key}</div>`,
                 i,
                 () => {
@@ -162,31 +356,11 @@ function renderDrive() {
     // 6. LOGIKA TOMBOL (Show/Hide Button)
     if (btnGaleri) {
         if (totalItems > GALLERY_LIMIT) {
-            // Jika item > 3, Tampilkan tombol
             btnGaleri.style.display = 'inline-flex';
         } else {
-            // Jika item <= 3, Sembunyikan tombol
             btnGaleri.style.display = 'none';
         }
     }
-}
-
-// ========================
-// EVENT LISTENER TOMBOL GALERI
-// ========================
-// Pasang event listener di luar fungsi renderDrive agar tidak duplikat
-if (btnGaleri) {
-    btnGaleri.addEventListener('click', () => {
-        // Toggle class 'show-all' pada container
-        container.classList.toggle('show-all');
-
-        // Ubah Teks Tombol
-        if (container.classList.contains('show-all')) {
-            btnGaleri.innerText = "Sembunyikan";
-        } else {
-            btnGaleri.innerText = "Lihat Semua Galeri";
-        }
-    });
 }
 
 // Navigasi Root & Path
@@ -200,45 +374,55 @@ function goPath(index) {
     renderDrive();
 }
 
-// Jalankan saat load
-window.addEventListener('DOMContentLoaded', renderDrive);
-
-// ========================
-// PENGURUS MOBILE TOGGLE
-// ========================
-const btnPengurus = document.getElementById("btnPengurus");
-const pengurusGrid = document.querySelector(".pengurus-grid");
-
-if (btnPengurus) {
-    btnPengurus.addEventListener("click", () => {
-        pengurusGrid.classList.toggle("show-all");
-        btnPengurus.innerText = pengurusGrid.classList.contains("show-all")
-            ? "Sembunyikan Sebagian"
-            : "Lihat Semua Pengurus";
-    });
-}
-
-// ========================
+// ===========================
 // IMAGE PREVIEW MODAL
-// ========================
+// ===========================
 const imgModal = document.getElementById("imgModal");
 const modalImg = document.getElementById("modalImg");
 
 function openImgModal(src) {
+    if (!imgModal || !modalImg) return;
+    
     modalImg.src = src;
     imgModal.style.display = "flex";
-    setTimeout(() => imgModal.classList.add("active"), 10);
+    requestAnimationFrame(() => {
+        imgModal.classList.add("active");
+    });
+    document.body.style.overflow = 'hidden';
 }
 
 function closeImgModal() {
+    if (!imgModal) return;
+    
     imgModal.classList.remove("active");
-    setTimeout(() => imgModal.style.display = "none", 300);
+    setTimeout(() => {
+        imgModal.style.display = "none";
+    }, 300);
+    document.body.style.overflow = '';
 }
 
-imgModal.addEventListener("click", (e) => {
-    if (e.target === imgModal) closeImgModal();
+if (imgModal) {
+    imgModal.addEventListener("click", (e) => {
+        if (e.target === imgModal || e.target.classList.contains('close-img-modal')) {
+            closeImgModal();
+        }
+    });
+}
+
+// ===========================
+// KEYBOARD SHORTCUTS
+// ===========================
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModalKegiatan();
+        closeImgModal();
+    }
 });
 
+// ===========================
 // INITIAL RUN
-window.addEventListener('DOMContentLoaded', renderDrive);
-
+// ===========================
+window.addEventListener('DOMContentLoaded', () => {
+    renderDrive();
+    onScroll(); // Set initial state
+});
