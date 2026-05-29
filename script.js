@@ -65,6 +65,33 @@ const driveData = {
             "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/6.jpeg",
             "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/7.jpeg",
             "img/gallery/2026/kerja-bakti-masjid/momen-ramadhan/8.jpeg"
+        ],
+        "Qurban": [
+            "img/gallery/2026/qurban/1.JPG",
+            "img/gallery/2026/qurban/2.JPG",
+            "img/gallery/2026/qurban/3.JPG",
+            "img/gallery/2026/qurban/4.JPG",
+            "img/gallery/2026/qurban/5.JPG",
+            "img/gallery/2026/qurban/6.JPG",
+            "img/gallery/2026/qurban/7.JPG",
+            "img/gallery/2026/qurban/8.JPG",
+            "img/gallery/2026/qurban/9.JPG",
+            "img/gallery/2026/qurban/10.JPG",
+            "img/gallery/2026/qurban/11.JPG",
+            "img/gallery/2026/qurban/12.JPG",
+            "img/gallery/2026/qurban/13.JPG",
+            "img/gallery/2026/qurban/14.JPG",
+            "img/gallery/2026/qurban/15.JPG",
+            "img/gallery/2026/qurban/16.JPG",
+            "img/gallery/2026/qurban/17.JPG",
+            "img/gallery/2026/qurban/18.JPG",
+            "img/gallery/2026/qurban/19.JPG",
+            "img/gallery/2026/qurban/20.JPG",
+            "img/gallery/2026/qurban/21.JPG",
+            "img/gallery/2026/qurban/22.JPG",
+            "img/gallery/2026/qurban/23.JPG",
+            "img/gallery/2026/qurban/24.JPG",
+            "img/gallery/2026/qurban/25.JPG"
         ]
     }
 };
