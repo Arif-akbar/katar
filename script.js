@@ -119,30 +119,30 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link[data-section]');
 const bnavItems = document.querySelectorAll('.bnav-item[data-section]');
 const backToTopBtn = document.getElementById('backToTop');
-const themeToggle = document.getElementById('themeToggle');
+const themeToggles = document.querySelectorAll('.theme-toggle');
 
 function applyTheme(theme) {
     const nextTheme = theme === 'light' ? 'light' : 'dark';
     document.documentElement.dataset.theme = nextTheme;
 
-    if (themeToggle) {
+    themeToggles.forEach(toggle => {
         const isLight = nextTheme === 'light';
-        themeToggle.setAttribute('aria-pressed', isLight);
-        themeToggle.setAttribute('aria-label', isLight ? 'Ganti mode gelap' : 'Ganti mode terang');
-    }
+        toggle.setAttribute('aria-pressed', isLight);
+        toggle.setAttribute('aria-label', isLight ? 'Ganti mode gelap' : 'Ganti mode terang');
+    });
 }
 
 const savedTheme = localStorage.getItem('siteTheme');
 applyTheme(savedTheme || 'dark');
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
         const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
         localStorage.setItem('siteTheme', nextTheme);
         applyTheme(nextTheme);
     });
-}
+});
 
 function onScroll() {
     // Navbar shrink effect
