@@ -122,7 +122,7 @@ function onScroll() {
     if (navbar) {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
     }
-    
+
     // Back to top button visibility
     if (backToTopBtn) {
         backToTopBtn.classList.toggle('visible', window.scrollY > 400);
@@ -136,12 +136,12 @@ function onScroll() {
             current = sec.id;
         }
     });
-    
+
     // Update nav links
     navLinks.forEach(link => {
         link.classList.toggle('active', link.dataset.section === current);
     });
-    
+
     // Update bottom nav items
     bnavItems.forEach(item => {
         item.classList.toggle('active', item.dataset.section === current);
@@ -162,7 +162,7 @@ if (menuToggle && navMenu) {
         menuToggle.classList.toggle('open', isOpen);
         menuToggle.setAttribute('aria-expanded', isOpen);
         document.body.classList.toggle('menu-open', isOpen);
-        
+
         // Animasi ikon burger
         const spans = menuToggle.querySelectorAll('span');
         if (isOpen) {
@@ -173,7 +173,7 @@ if (menuToggle && navMenu) {
             spans.forEach(span => span.style = '');
         }
     });
-    
+
     // Close menu when clicking nav links
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
@@ -181,7 +181,7 @@ if (menuToggle && navMenu) {
             menuToggle.classList.remove('open');
             menuToggle.setAttribute('aria-expanded', false);
             document.body.classList.remove('menu-open');
-            
+
             const spans = menuToggle.querySelectorAll('span');
             spans.forEach(span => span.style = '');
         });
@@ -216,10 +216,10 @@ function showDetail(key) {
         console.error("Data kegiatan tidak ditemukan untuk key:", key);
         return;
     }
-    
+
     modalTitle.textContent = kegiatanDetail[key].title;
     modalText.textContent = kegiatanDetail[key].text;
-    
+
     modalKegiatan.style.display = 'flex';
     requestAnimationFrame(() => {
         modalKegiatan.classList.add('active');
@@ -257,13 +257,13 @@ function togglePengurus() {
     const extras = grid.querySelectorAll('.pengurus-extra');
     const btnText = document.getElementById('btnPengurusText');
     const btnIcon = document.getElementById('btnPengurusIcon');
-    
+
     extras.forEach(el => el.classList.toggle('visible', pengurusExpanded));
-    
+
     if (btnText) {
         btnText.textContent = pengurusExpanded ? 'Sembunyikan' : 'Lihat Semua Pengurus';
     }
-    
+
     if (btnIcon) {
         btnIcon.textContent = pengurusExpanded ? '^' : 'v';
     }
@@ -276,16 +276,16 @@ function setGaleriView(mode) {
     const grid = document.getElementById('driveContent');
     const btnGrid = document.getElementById('btnGrid');
     const btnList = document.getElementById('btnList');
-    
+
     if (grid) {
         grid.classList.toggle('list-view', mode === 'list');
     }
-    
+
     if (btnGrid) {
         btnGrid.classList.toggle('active', mode === 'grid');
         btnGrid.setAttribute('aria-pressed', mode === 'grid');
     }
-    
+
     if (btnList) {
         btnList.classList.toggle('active', mode === 'list');
         btnList.setAttribute('aria-pressed', mode === 'list');
@@ -301,7 +301,7 @@ function toggleGaleri() {
 
     const btnText = document.getElementById('btnGaleriText');
     const expanded = grid.classList.toggle('show-all');
-    
+
     if (btnText) {
         btnText.textContent = expanded ? 'Sembunyikan' : 'Lihat Lebih Banyak';
     }
@@ -320,11 +320,11 @@ const GALLERY_LIMIT = 3;
 
 function renderDrive() {
     if (!container) return;
-    
+
     // 1. Reset Container
     container.innerHTML = "";
     container.classList.remove("show-all");
-    
+
     const btnText = document.getElementById('btnGaleriText');
     if (btnText) btnText.textContent = "Lihat Lebih Banyak";
 
@@ -421,7 +421,7 @@ const modalImg = document.getElementById("modalImg");
 
 function openImgModal(src) {
     if (!imgModal || !modalImg) return;
-    
+
     modalImg.src = src;
     imgModal.style.display = "flex";
     requestAnimationFrame(() => {
@@ -432,7 +432,7 @@ function openImgModal(src) {
 
 function closeImgModal() {
     if (!imgModal) return;
-    
+
     imgModal.classList.remove("active");
     setTimeout(() => {
         imgModal.style.display = "none";

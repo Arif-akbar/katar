@@ -1,536 +1,855 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Website resmi Karang Taruna FREEDOM Manisharjo: informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi organisasi pemuda desa." />
+    <meta
+      name="description"
+      content="Website resmi Karang Taruna FREEDOM Manisharjo: informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi organisasi pemuda desa."
+    />
     <meta property="og:title" content="Karang Taruna FREEDOM Manisharjo" />
-    <meta property="og:description" content="Informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi Karang Taruna FREEDOM Manisharjo." />
+    <meta
+      property="og:description"
+      content="Informasi kegiatan, struktur pengurus, galeri dokumentasi, dan lokasi Karang Taruna FREEDOM Manisharjo."
+    />
     <meta property="og:image" content="img/hero.jpeg" />
     <meta property="og:type" content="website" />
     <title>Karang Taruna FREEDOM - Manisharjo</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- ============================
          TOP BAR: PENGUMUMAN
     ============================= -->
     <div class="announcement-bar" id="announcementBar">
-        <div class="announcement-inner">
-            <span class="ann-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
-            </span>
-            <span class="ann-text">Rapat Koordinasi Bulanan - Minggu, 7 Juni 2026 - Balai Desa, 19.00 WIB</span>
-        </div>
-        <button class="ann-close" onclick="closeAnnouncement()" aria-label="Tutup pengumuman">&times;</button>
+      <div class="announcement-inner">
+        <span class="ann-icon">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </span>
+        <span class="ann-text"
+          >Rapat Koordinasi Bulanan - Minggu, 7 Juni 2026 - Balai Desa, 19.00
+          WIB</span
+        >
+      </div>
+      <button
+        class="ann-close"
+        onclick="closeAnnouncement()"
+        aria-label="Tutup pengumuman"
+      >
+        &times;
+      </button>
     </div>
 
     <!-- ============================
          NAVBAR
     ============================= -->
     <header class="navbar" id="navbar">
-        <div class="container nav-wrapper">
-            <a href="#home" class="logo" aria-label="Beranda">
-                FREEDOM<span class="logo-dot">.</span>
-                <small>Manisharjo</small>
-            </a>
+      <div class="container nav-wrapper">
+        <a href="#home" class="logo" aria-label="Beranda">
+          FREEDOM<span class="logo-dot">.</span>
+          <small>Manisharjo</small>
+        </a>
 
-            <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Menu utama">
-                <a href="#home" class="nav-link active" data-section="home">Beranda</a>
-                <a href="#visi" class="nav-link" data-section="visi">Visi Misi</a>
-                <a href="#kegiatan" class="nav-link" data-section="kegiatan">Kegiatan</a>
-                <a href="#pengurus" class="nav-link" data-section="pengurus">Pengurus</a>
-                <a href="#galeri" class="nav-link" data-section="galeri">Galeri</a>
-                <a href="#lokasi" class="nav-link" data-section="lokasi">Lokasi</a>
-            </nav>
+        <nav
+          class="nav-menu"
+          id="navMenu"
+          role="navigation"
+          aria-label="Menu utama"
+        >
+          <a href="#home" class="nav-link active" data-section="home"
+            >Beranda</a
+          >
+          <a href="#visi" class="nav-link" data-section="visi">Visi Misi</a>
+          <a href="#kegiatan" class="nav-link" data-section="kegiatan"
+            >Kegiatan</a
+          >
+          <a href="#pengurus" class="nav-link" data-section="pengurus"
+            >Pengurus</a
+          >
+          <a href="#galeri" class="nav-link" data-section="galeri">Galeri</a>
+          <a href="#lokasi" class="nav-link" data-section="lokasi">Lokasi</a>
+        </nav>
 
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti mode terang" aria-pressed="false">
-                <span class="theme-toggle-icon" aria-hidden="true"></span>
-            </button>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Ganti mode terang"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <!-- ============================
          HERO
     ============================= -->
     <section id="home" class="hero">
-        <div class="hero-bg-pattern" aria-hidden="true"></div>
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="badge-row">
-                    <span class="badge">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                        </svg>
-                        Semangat Pemuda Desa
-                    </span>
-                </div>
-                <h1>Karang Taruna<br><em>MANISHARJO</em></h1>
-                <p class="hero-desc">Membangun generasi muda yang berkarakter, kreatif, dan berkontribusi nyata untuk kemajuan desa Manisharjo.</p>
+      <div class="hero-bg-pattern" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="badge-row">
+            <span class="badge">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                />
+              </svg>
+              Semangat Pemuda Desa
+            </span>
+          </div>
+          <h1>Karang Taruna<br /><em>MANISHARJO</em></h1>
+          <p class="hero-desc">
+            Membangun generasi muda yang berkarakter, kreatif, dan berkontribusi
+            nyata untuk kemajuan desa Manisharjo.
+          </p>
 
-                <div class="hero-btn-group">
-                    <a href="#kegiatan" class="btn btn-primary">Lihat Kegiatan</a>
-                    <a href="#pengurus" class="btn btn-ghost">Struktur Organisasi</a>
-                </div>
+          <div class="hero-btn-group">
+            <a href="#kegiatan" class="btn btn-primary">Lihat Kegiatan</a>
+            <a href="#pengurus" class="btn btn-ghost">Struktur Organisasi</a>
+          </div>
 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Anggota Aktif</span>
-                    </div>
-                    <div class="stat-divider" aria-hidden="true"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">10</span>
-                        <span class="stat-label">Program Kerja</span>
-                    </div>
-                    <div class="stat-divider" aria-hidden="true"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">5 Th</span>
-                        <span class="stat-label">Pengabdian</span>
-                    </div>
-                </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Anggota Aktif</span>
             </div>
-
-            <div class="hero-img" aria-hidden="true">
-                <div class="img-frame">
-                    <img src="img/hero.jpeg" alt="Foto anggota Karang Taruna FREEDOM Manisharjo" fetchpriority="high"
-                        onerror="this.src='https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM'" />
-                    <div class="img-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                        Desa Manisharjo
-                    </div>
-                </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">10</span>
+              <span class="stat-label">Program Kerja</span>
             </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">5 Th</span>
+              <span class="stat-label">Pengabdian</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <a href="#visi" class="scroll-down" aria-label="Scroll ke bawah">
-            <span class="scroll-arrow">&darr;</span>
-        </a>
+        <div class="hero-img" aria-hidden="true">
+          <div class="img-frame">
+            <img
+              src="img/hero.jpeg"
+              alt="Foto anggota Karang Taruna FREEDOM Manisharjo"
+              fetchpriority="high"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM'
+              "
+            />
+            <div class="img-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              Desa Manisharjo
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#visi" class="scroll-down" aria-label="Scroll ke bawah">
+        <span class="scroll-arrow">&darr;</span>
+      </a>
     </section>
 
     <!-- ============================
          VISI MISI
     ============================= -->
     <section id="visi" class="section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag">Landasan Kami</p>
-                <h2 class="section-title">Visi & Misi</h2>
-                <p class="section-subtitle">Arah pergerakan yang nyata untuk masa depan desa.</p>
-            </div>
-
-            <div class="visi-misi-grid">
-                <div class="card card-visi reveal">
-                    <div class="card-accent" aria-hidden="true"></div>
-                    <span class="card-emoji" aria-hidden="true">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
-                    </span>
-                    <h3>Visi</h3>
-                    <blockquote>
-                        "Mewujudkan pemuda Manisharjo yang berkarakter, mandiri, berdaya saing global, serta memiliki kepedulian tinggi terhadap lingkungan sosial."
-                    </blockquote>
-                </div>
-
-                <div class="card card-misi reveal">
-                    <div class="card-accent" aria-hidden="true"></div>
-                    <span class="card-emoji" aria-hidden="true">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </span>
-                    <h3>Misi</h3>
-                    <ul class="misi-list">
-                        <li>
-                            <span class="list-num">01</span>
-                            <span>Meningkatkan partisipasi aktif pemuda dalam pembangunan desa.</span>
-                        </li>
-                        <li>
-                            <span class="list-num">02</span>
-                            <span>Mengembangkan kreativitas melalui pelatihan dan kewirausahaan.</span>
-                        </li>
-                        <li>
-                            <span class="list-num">03</span>
-                            <span>Menumbuhkan rasa solidaritas dan kepedulian sosial antar warga.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Landasan Kami</p>
+          <h2 class="section-title">Visi & Misi</h2>
+          <p class="section-subtitle">
+            Arah pergerakan yang nyata untuk masa depan desa.
+          </p>
         </div>
+
+        <div class="visi-misi-grid">
+          <div class="card card-visi reveal">
+            <div class="card-accent" aria-hidden="true"></div>
+            <span class="card-emoji" aria-hidden="true">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </span>
+            <h3>Visi</h3>
+            <blockquote>
+              "Mewujudkan pemuda Manisharjo yang berkarakter, mandiri, berdaya
+              saing global, serta memiliki kepedulian tinggi terhadap lingkungan
+              sosial."
+            </blockquote>
+          </div>
+
+          <div class="card card-misi reveal">
+            <div class="card-accent" aria-hidden="true"></div>
+            <span class="card-emoji" aria-hidden="true">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </span>
+            <h3>Misi</h3>
+            <ul class="misi-list">
+              <li>
+                <span class="list-num">01</span>
+                <span
+                  >Meningkatkan partisipasi aktif pemuda dalam pembangunan
+                  desa.</span
+                >
+              </li>
+              <li>
+                <span class="list-num">02</span>
+                <span
+                  >Mengembangkan kreativitas melalui pelatihan dan
+                  kewirausahaan.</span
+                >
+              </li>
+              <li>
+                <span class="list-num">03</span>
+                <span
+                  >Menumbuhkan rasa solidaritas dan kepedulian sosial antar
+                  warga.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================
          KEGIATAN / PROGRAM
     ============================= -->
     <section id="kegiatan" class="section bg-earth">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag">Aksi Nyata</p>
-                <h2 class="section-title">Program Unggulan</h2>
-                <p class="section-subtitle">Gerakan kami untuk masyarakat yang lebih baik.</p>
-            </div>
-
-            <div class="kegiatan-grid">
-                <article class="kegiatan-card reveal" tabindex="0">
-                    <div class="kegiatan-img-wrap">
-                        <img src="img/program/gotongroyong.jpeg" alt="Kegiatan Kerja Bakti" class="card-img" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/480x320/111111/ffd700?text=Kerja+Bakti'">
-                        <span class="kegiatan-tag">Sosial</span>
-                    </div>
-                    <div class="kegiatan-content">
-                        <h3>Kerja Bakti</h3>
-                        <p>Bersih Lingkungannya, Kuat Kebersamaannya</p>
-                        <button class="btn-text" onclick="showDetail('kerja_bakti')">
-                            Baca Selengkapnya <span class="arrow">&rarr;</span>
-                        </button>
-                    </div>
-                </article>
-
-                <article class="kegiatan-card reveal" tabindex="0">
-                    <div class="kegiatan-img-wrap">
-                        <img src="img/program/futsal.jpeg" alt="Kegiatan Futsal" class="card-img" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/480x320/b80000/ffd700?text=Futsal'">
-                        <span class="kegiatan-tag">Olahraga</span>
-                    </div>
-                    <div class="kegiatan-content">
-                        <h3>Futsal</h3>
-                        <p>Bersatu di Lapangan, Solid dalam Kebersamaan</p>
-                        <button class="btn-text" onclick="showDetail('pengajian')">
-                            Baca Selengkapnya <span class="arrow">&rarr;</span>
-                        </button>
-                    </div>
-                </article>
-
-                <article class="kegiatan-card reveal" tabindex="0">
-                    <div class="kegiatan-img-wrap">
-                        <img src="img/program/pemuda.jpeg" alt="Lomba dan Event Pemuda" class="card-img" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/480x320/111111/e21b1b?text=Lomba+Event'">
-                        <span class="kegiatan-tag">Kreativitas</span>
-                    </div>
-                    <div class="kegiatan-content">
-                        <h3>Lomba & Event</h3>
-                        <p>Wadah kreativitas dan kompetisi positif pemuda.</p>
-                        <button class="btn-text" onclick="showDetail('lomba')">
-                            Baca Selengkapnya <span class="arrow">&rarr;</span>
-                        </button>
-                    </div>
-                </article>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Aksi Nyata</p>
+          <h2 class="section-title">Program Unggulan</h2>
+          <p class="section-subtitle">
+            Gerakan kami untuk masyarakat yang lebih baik.
+          </p>
         </div>
+
+        <div class="kegiatan-grid">
+          <article class="kegiatan-card reveal" tabindex="0">
+            <div class="kegiatan-img-wrap">
+              <img
+                src="img/program/gotongroyong.jpeg"
+                alt="Kegiatan Kerja Bakti"
+                class="card-img"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/480x320/111111/ffd700?text=Kerja+Bakti'
+                "
+              />
+              <span class="kegiatan-tag">Sosial</span>
+            </div>
+            <div class="kegiatan-content">
+              <h3>Kerja Bakti</h3>
+              <p>Bersih Lingkungannya, Kuat Kebersamaannya</p>
+              <button class="btn-text" onclick="showDetail('kerja_bakti')">
+                Baca Selengkapnya <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="kegiatan-card reveal" tabindex="0">
+            <div class="kegiatan-img-wrap">
+              <img
+                src="img/program/futsal.jpeg"
+                alt="Kegiatan Futsal"
+                class="card-img"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/480x320/b80000/ffd700?text=Futsal'
+                "
+              />
+              <span class="kegiatan-tag">Olahraga</span>
+            </div>
+            <div class="kegiatan-content">
+              <h3>Futsal</h3>
+              <p>Bersatu di Lapangan, Solid dalam Kebersamaan</p>
+              <button class="btn-text" onclick="showDetail('pengajian')">
+                Baca Selengkapnya <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="kegiatan-card reveal" tabindex="0">
+            <div class="kegiatan-img-wrap">
+              <img
+                src="img/program/pemuda.jpeg"
+                alt="Lomba dan Event Pemuda"
+                class="card-img"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/480x320/111111/e21b1b?text=Lomba+Event'
+                "
+              />
+              <span class="kegiatan-tag">Kreativitas</span>
+            </div>
+            <div class="kegiatan-content">
+              <h3>Lomba & Event</h3>
+              <p>Wadah kreativitas dan kompetisi positif pemuda.</p>
+              <button class="btn-text" onclick="showDetail('lomba')">
+                Baca Selengkapnya <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- Modal Kegiatan -->
-    <div class="modal-overlay" id="kegiatanModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3 id="modalTitle">Judul Kegiatan</h3>
-                <button class="modal-close-btn" onclick="closeModalKegiatan()" aria-label="Tutup">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p id="modalText">Deskripsi lengkap kegiatan...</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-outline-dark" onclick="closeModalKegiatan()">Tutup</button>
-            </div>
+    <div
+      class="modal-overlay"
+      id="kegiatanModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modalTitle">Judul Kegiatan</h3>
+          <button
+            class="modal-close-btn"
+            onclick="closeModalKegiatan()"
+            aria-label="Tutup"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <p id="modalText">Deskripsi lengkap kegiatan...</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-dark" onclick="closeModalKegiatan()">
+            Tutup
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- ============================
          PENGURUS
     ============================= -->
     <section id="pengurus" class="section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag">Tim Inti</p>
-                <h2 class="section-title">Struktur Pengurus</h2>
-                <p class="section-subtitle">Wajah-wajah di balik layar organisasi kami.</p>
-            </div>
-
-            <div class="pengurus-grid" id="pengurusGrid">
-                <div class="profile-card reveal">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/arif.jpeg" alt="Arif Akbarudin - Ketua" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/111111/ffd700?text=AA'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Arif Akbarudin</h3>
-                        <span class="role-badge role-ketua">Ketua</span>
-                    </div>
-                </div>
-
-                <div class="profile-card reveal">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/febri.jpeg" alt="Febri - Wakil Ketua" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/b80000/ffffff?text=FB'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Febri</h3>
-                        <span class="role-badge role-wakil">Wakil Ketua</span>
-                    </div>
-                </div>
-
-                <div class="profile-card reveal pengurus-extra">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/isti.jpeg" alt="Isti Maulia H - Sekretaris 1" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/ffd700/111111?text=IM'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Isti Maulia H</h3>
-                        <span class="role-badge role-sekretaris">Sekretaris 1</span>
-                    </div>
-                </div>
-
-                <div class="profile-card reveal pengurus-extra">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/aziz.jpeg" alt="Wildhan Thoriq Aziz - Sekretaris 2" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/ffd700/111111?text=WA'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Wildhan Thoriq Aziz</h3>
-                        <span class="role-badge role-sekretaris">Sekretaris 2</span>
-                    </div>
-                </div>
-
-                <div class="profile-card reveal pengurus-extra">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/hafiz.jpeg" alt="Hafizh Harfiansyah - Bendahara 1" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/111111/ffd700?text=HH'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Hafizh Harfiansyah</h3>
-                        <span class="role-badge role-bendahara">Bendahara 1</span>
-                    </div>
-                </div>
-
-                <div class="profile-card reveal pengurus-extra">
-                    <div class="profile-avatar">
-                        <img src="img/pengurus/fery.jpeg" alt="Feri Nur Ardian - Bendahara 2" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/120/b80000/ffffff?text=FN'">
-                    </div>
-                    <div class="profile-info">
-                        <h3>Feri Nur Ardian</h3>
-                        <span class="role-badge role-bendahara">Bendahara 2</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="center-btn mt-40">
-                <button id="btnPengurus" class="btn btn-outline-red" onclick="togglePengurus()">
-                    <span id="btnPengurusText">Lihat Semua Pengurus</span>
-                    <span class="btn-icon" id="btnPengurusIcon">&darr;</span>
-                </button>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Tim Inti</p>
+          <h2 class="section-title">Struktur Pengurus</h2>
+          <p class="section-subtitle">
+            Wajah-wajah di balik layar organisasi kami.
+          </p>
         </div>
+
+        <div class="pengurus-grid" id="pengurusGrid">
+          <div class="profile-card reveal">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/arif.jpeg"
+                alt="Arif Akbarudin - Ketua"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/111111/ffd700?text=AA'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Arif Akbarudin</h3>
+              <span class="role-badge role-ketua">Ketua</span>
+            </div>
+          </div>
+
+          <div class="profile-card reveal">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/febri.jpeg"
+                alt="Febri - Wakil Ketua"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/b80000/ffffff?text=FB'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Febri</h3>
+              <span class="role-badge role-wakil">Wakil Ketua</span>
+            </div>
+          </div>
+
+          <div class="profile-card reveal pengurus-extra">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/isti.jpeg"
+                alt="Isti Maulia H - Sekretaris 1"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/ffd700/111111?text=IM'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Isti Maulia H</h3>
+              <span class="role-badge role-sekretaris">Sekretaris 1</span>
+            </div>
+          </div>
+
+          <div class="profile-card reveal pengurus-extra">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/aziz.jpeg"
+                alt="Wildhan Thoriq Aziz - Sekretaris 2"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/ffd700/111111?text=WA'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Wildhan Thoriq Aziz</h3>
+              <span class="role-badge role-sekretaris">Sekretaris 2</span>
+            </div>
+          </div>
+
+          <div class="profile-card reveal pengurus-extra">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/hafiz.jpeg"
+                alt="Hafizh Harfiansyah - Bendahara 1"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/111111/ffd700?text=HH'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Hafizh Harfiansyah</h3>
+              <span class="role-badge role-bendahara">Bendahara 1</span>
+            </div>
+          </div>
+
+          <div class="profile-card reveal pengurus-extra">
+            <div class="profile-avatar">
+              <img
+                src="img/pengurus/fery.jpeg"
+                alt="Feri Nur Ardian - Bendahara 2"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/120/b80000/ffffff?text=FN'
+                "
+              />
+            </div>
+            <div class="profile-info">
+              <h3>Feri Nur Ardian</h3>
+              <span class="role-badge role-bendahara">Bendahara 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-btn mt-40">
+          <button
+            id="btnPengurus"
+            class="btn btn-outline-red"
+            onclick="togglePengurus()"
+          >
+            <span id="btnPengurusText">Lihat Semua Pengurus</span>
+            <span class="btn-icon" id="btnPengurusIcon">&darr;</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ============================
          GALERI
     ============================= -->
     <section id="galeri" class="section bg-earth">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag">Dokumentasi</p>
-                <h2 class="section-title">Galeri Kegiatan</h2>
-                <p class="section-subtitle">Rekam jejak digital setiap momen bersama.</p>
-            </div>
-
-            <div class="galeri-toolbar">
-                <div class="breadcrumb" id="breadcrumb"></div>
-                <div class="galeri-view-toggle" role="group" aria-label="Tampilan galeri">
-                    <button class="view-btn active" id="btnGrid" onclick="setGaleriView('grid')" title="Grid view" aria-pressed="true">Grid</button>
-                    <button class="view-btn" id="btnList" onclick="setGaleriView('list')" title="List view" aria-pressed="false">List</button>
-                </div>
-            </div>
-
-            <div class="drive-grid" id="driveContent" role="list">
-                <!-- Populated by script.js -->
-            </div>
-
-            <div class="center-btn mt-40">
-                <button id="btnGaleri" class="btn btn-primary" onclick="toggleGaleri()">
-                    <span id="btnGaleriText">Lihat Lebih Banyak</span>
-                    <span class="btn-icon">&darr;</span>
-                </button>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Dokumentasi</p>
+          <h2 class="section-title">Galeri Kegiatan</h2>
+          <p class="section-subtitle">
+            Rekam jejak digital setiap momen bersama.
+          </p>
         </div>
+
+        <div class="galeri-toolbar">
+          <div class="breadcrumb" id="breadcrumb"></div>
+          <div
+            class="galeri-view-toggle"
+            role="group"
+            aria-label="Tampilan galeri"
+          >
+            <button
+              class="view-btn active"
+              id="btnGrid"
+              onclick="setGaleriView('grid')"
+              title="Grid view"
+              aria-pressed="true"
+            >
+              Grid
+            </button>
+            <button
+              class="view-btn"
+              id="btnList"
+              onclick="setGaleriView('list')"
+              title="List view"
+              aria-pressed="false"
+            >
+              List
+            </button>
+          </div>
+        </div>
+
+        <div class="drive-grid" id="driveContent" role="list">
+          <!-- Populated by script.js -->
+        </div>
+
+        <div class="center-btn mt-40">
+          <button
+            id="btnGaleri"
+            class="btn btn-primary"
+            onclick="toggleGaleri()"
+          >
+            <span id="btnGaleriText">Lihat Lebih Banyak</span>
+            <span class="btn-icon">&darr;</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Modal Gambar -->
-    <div class="modal-overlay" id="imgModal" role="dialog" aria-modal="true" aria-label="Foto besar">
-        <button class="close-img-modal" onclick="closeImgModal()" aria-label="Tutup foto">&times;</button>
-        <div class="img-modal-wrap">
-            <img id="modalImg" class="modal-img-content" alt="Dokumentasi kegiatan" />
-        </div>
+    <div
+      class="modal-overlay"
+      id="imgModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto besar"
+    >
+      <button
+        class="close-img-modal"
+        onclick="closeImgModal()"
+        aria-label="Tutup foto"
+      >
+        &times;
+      </button>
+      <div class="img-modal-wrap">
+        <img
+          id="modalImg"
+          class="modal-img-content"
+          alt="Dokumentasi kegiatan"
+        />
+      </div>
     </div>
 
     <!-- ============================
          LOKASI
     ============================= -->
     <section id="lokasi" class="section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag">Temukan Kami</p>
-                <h2 class="section-title">Lokasi Desa</h2>
-                <p class="section-subtitle">Pelajari sejarah dan temukan desa tercinta kami.</p>
-            </div>
-
-            <div class="location-box">
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.056461876534!2d110.8659123!3d-7.7838275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3089d892019b%3A0x63318264789547!2sBalai%20Desa%20Manisharjo!5e0!3m2!1sid!2sid!4v1689234567890!5m2!1sid!2sid"
-                        allowfullscreen="" loading="lazy"
-                        title="Peta Desa Manisharjo"></iframe>
-                </div>
-
-                <div class="location-info">
-                    <div class="location-detail-row">
-                        <span class="loc-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>Alamat</strong>
-                            <p>Dukuh Manisharjo, Kecamatan Bendosari,<br>Kabupaten Sukoharjo, Jawa Tengah.</p>
-                        </div>
-                    </div>
-                    <div class="location-detail-row">
-                        <span class="loc-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>Sekretariat</strong>
-                            <p>Senin - Jumat, 18.00 - 21.00 WIB</p>
-                        </div>
-                    </div>
-                    <div class="location-actions">
-                        <a href="https://maps.app.goo.gl/f5u6bpwCPXjp7rHX7" target="_blank" rel="noopener" class="btn btn-primary loc-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
-                            </svg>
-                            Buka di Maps
-                        </a>
-                        <a href="https://solo.tribunnews.com/2025/05/14/asal-usul-desa-manisharjo-di-bendosari-sukoharjo-dulu-namanya-jogo-dengkul-lalu-diubah-keraton-solo"
-                            target="_blank" rel="noopener" class="btn btn-ghost-red loc-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                            </svg>
-                            Asal Usul Desa
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Temukan Kami</p>
+          <h2 class="section-title">Lokasi Desa</h2>
+          <p class="section-subtitle">
+            Pelajari sejarah dan temukan desa tercinta kami.
+          </p>
         </div>
+
+        <div class="location-box">
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.056461876534!2d110.8659123!3d-7.7838275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3089d892019b%3A0x63318264789547!2sBalai%20Desa%20Manisharjo!5e0!3m2!1sid!2sid!4v1689234567890!5m2!1sid!2sid"
+              allowfullscreen=""
+              loading="lazy"
+              title="Peta Desa Manisharjo"
+            ></iframe>
+          </div>
+
+          <div class="location-info">
+            <div class="location-detail-row">
+              <span class="loc-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <div>
+                <strong>Alamat</strong>
+                <p>
+                  Dukuh Manisharjo, Kecamatan Bendosari,<br />Kabupaten
+                  Sukoharjo, Jawa Tengah.
+                </p>
+              </div>
+            </div>
+            <div class="location-detail-row">
+              <span class="loc-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <div>
+                <strong>Sekretariat</strong>
+                <p>Senin - Jumat, 18.00 - 21.00 WIB</p>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a
+                href="https://maps.app.goo.gl/f5u6bpwCPXjp7rHX7"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary loc-btn"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                </svg>
+                Buka di Maps
+              </a>
+              <a
+                href="https://solo.tribunnews.com/2025/05/14/asal-usul-desa-manisharjo-di-bendosari-sukoharjo-dulu-namanya-jogo-dengkul-lalu-diubah-keraton-solo"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-ghost-red loc-btn"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path
+                    d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                  ></path>
+                </svg>
+                Asal Usul Desa
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================
          FOOTER
     ============================= -->
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="footer-logo">FREEDOM<span>.</span></span>
-                <p>Karang Taruna Manisharjo<br>Bendosari - Sukoharjo - Jawa Tengah</p>
-            </div>
-            <div class="footer-links">
-                <a href="#home">Beranda</a>
-                <a href="#visi">Visi Misi</a>
-                <a href="#kegiatan">Kegiatan</a>
-                <a href="#pengurus">Pengurus</a>
-                <a href="#galeri">Galeri</a>
-                <a href="#lokasi">Lokasi</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Karang Taruna FREEDOM Manisharjo. Dibuat dengan semangat pemuda desa.</p>
-            </div>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">FREEDOM<span>.</span></span>
+          <p>
+            Karang Taruna Manisharjo<br />Bendosari - Sukoharjo - Jawa Tengah
+          </p>
         </div>
+        <div class="footer-links">
+          <a href="#home">Beranda</a>
+          <a href="#visi">Visi Misi</a>
+          <a href="#kegiatan">Kegiatan</a>
+          <a href="#pengurus">Pengurus</a>
+          <a href="#galeri">Galeri</a>
+          <a href="#lokasi">Lokasi</a>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Karang Taruna FREEDOM Manisharjo. Dibuat dengan semangat
+            pemuda desa.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- ============================
          BOTTOM NAV (Mobile only)
     ============================= -->
     <nav class="bottom-nav" id="bottomNav" aria-label="Navigasi bawah">
-        <a href="#home" class="bnav-item active" data-section="home">
-            <span class="bnav-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-            </span>
-            <span class="bnav-label">Beranda</span>
-        </a>
-        <a href="#kegiatan" class="bnav-item" data-section="kegiatan">
-            <span class="bnav-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-            </span>
-            <span class="bnav-label">Kegiatan</span>
-        </a>
-        <a href="#galeri" class="bnav-item" data-section="galeri">
-            <span class="bnav-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-            </span>
-            <span class="bnav-label">Galeri</span>
-        </a>
-        <a href="#pengurus" class="bnav-item" data-section="pengurus">
-            <span class="bnav-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-            </span>
-            <span class="bnav-label">Pengurus</span>
-        </a>
-        <a href="#lokasi" class="bnav-item" data-section="lokasi">
-            <span class="bnav-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-            </span>
-            <span class="bnav-label">Lokasi</span>
-        </a>
+      <a href="#home" class="bnav-item active" data-section="home">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </span>
+        <span class="bnav-label">Beranda</span>
+      </a>
+      <a href="#kegiatan" class="bnav-item" data-section="kegiatan">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </span>
+        <span class="bnav-label">Kegiatan</span>
+      </a>
+      <a href="#galeri" class="bnav-item" data-section="galeri">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </span>
+        <span class="bnav-label">Galeri</span>
+      </a>
+      <a href="#pengurus" class="bnav-item" data-section="pengurus">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span class="bnav-label">Pengurus</span>
+      </a>
+      <a href="#lokasi" class="bnav-item" data-section="lokasi">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </span>
+        <span class="bnav-label">Lokasi</span>
+      </a>
     </nav>
 
     <!-- Back to top button -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">&uarr;</button>
+    <button
+      class="back-to-top"
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Kembali ke atas"
+    >
+      &uarr;
+    </button>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
