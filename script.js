@@ -103,13 +103,13 @@ const driveData = {
 // Tambah folder baru di driveData → slideshow langsung ikut.
 // ===========================
 
-const SLIDESHOW_YEAR_KEY  = 'Ivent 2026'; // ganti jika nama key berubah
-const PHOTOS_PER_FOLDER   = 2;            // jumlah foto per folder
-const SLIDE_INTERVAL_MS   = 1600;         // jeda antar slide (ms)
+const SLIDESHOW_YEAR_KEY = 'Event 2026'; // ganti jika nama key berubah
+const PHOTOS_PER_FOLDER = 2;            // jumlah foto per folder
+const SLIDE_INTERVAL_MS = 1600;         // jeda antar slide (ms)
 
-let heroSlideData   = [];   // [{ src, label }, ...]
-let currentSlide    = 0;
-let slideshowTimer  = null;
+let heroSlideData = [];   // [{ src, label }, ...]
+let currentSlide = 0;
+let slideshowTimer = null;
 
 /**
  * Bangun array slide dari driveData[SLIDESHOW_YEAR_KEY].
@@ -133,7 +133,7 @@ function buildSlideData() {
  */
 function buildHeroSlideshow() {
     const container = document.getElementById('heroSlideshow');
-    const dotsWrap  = document.getElementById('slideDots');
+    const dotsWrap = document.getElementById('slideDots');
     if (!container || !dotsWrap) return;
 
     heroSlideData = buildSlideData();
@@ -141,7 +141,7 @@ function buildHeroSlideshow() {
 
     // Kosongkan dulu
     container.innerHTML = '';
-    dotsWrap.innerHTML  = '';
+    dotsWrap.innerHTML = '';
 
     heroSlideData.forEach(({ src, label }, i) => {
         // Slide
@@ -149,8 +149,8 @@ function buildHeroSlideshow() {
         slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
 
         const img = document.createElement('img');
-        img.src     = src;
-        img.alt     = label;
+        img.src = src;
+        img.alt = label;
         img.loading = i === 0 ? 'eager' : 'lazy';
         img.onerror = function () {
             this.src = 'https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM';
@@ -160,7 +160,7 @@ function buildHeroSlideshow() {
 
         // Dot
         const dot = document.createElement('button');
-        dot.className  = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', `Slide ${i + 1} — ${label}`);
         dot.addEventListener('click', () => {
             goToSlide(i);
@@ -184,7 +184,7 @@ function updateSlideLabel(index) {
 
 function goToSlide(index) {
     const slides = document.querySelectorAll('.hero-slide');
-    const dots   = document.querySelectorAll('.slide-dot');
+    const dots = document.querySelectorAll('.slide-dot');
     if (!slides.length) return;
 
     slides[currentSlide]?.classList.remove('active');
