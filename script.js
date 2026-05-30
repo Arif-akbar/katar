@@ -20,7 +20,7 @@ const kegiatanDetail = {
 // DATA GALERI (Simulasi Folder Drive)
 // ===========================
 const driveData = {
-    "Kegiatan 2025": {
+    "Ivent 2025": {
         "Futsal": [
             "img/gallery/2025/futsal/1.jpeg",
             "img/gallery/2025/futsal/2.jpeg",
@@ -47,7 +47,7 @@ const driveData = {
             "img/gallery/2025/pentas-seni/5.jpeg"
         ]
     },
-    "Dokumentasi 2026": {
+    "Ivent 2026": {
         "Kerja Bakti Masjid": [
             "img/gallery/2026/kerja-bakti-masjid/1.jpeg",
             "img/gallery/2026/kerja-bakti-masjid/2.jpeg",
@@ -97,6 +97,128 @@ const driveData = {
 };
 
 // ===========================
+// HERO SLIDESHOW
+// Otomatis baca dari driveData["Ivent 2026"].
+// Setiap folder diambil PHOTOS_PER_FOLDER foto pertama.
+// Tambah folder baru di driveData → slideshow langsung ikut.
+// ===========================
+
+const SLIDESHOW_YEAR_KEY  = 'Ivent 2026'; // ganti jika nama key berubah
+const PHOTOS_PER_FOLDER   = 2;            // jumlah foto per folder
+const SLIDE_INTERVAL_MS   = 1600;         // jeda antar slide (ms)
+
+let heroSlideData   = [];   // [{ src, label }, ...]
+let currentSlide    = 0;
+let slideshowTimer  = null;
+
+/**
+ * Bangun array slide dari driveData[SLIDESHOW_YEAR_KEY].
+ * Ambil PHOTOS_PER_FOLDER foto pertama dari tiap sub-folder.
+ */
+function buildSlideData() {
+    const yearData = driveData[SLIDESHOW_YEAR_KEY];
+    if (!yearData || typeof yearData !== 'object') return [];
+
+    const result = [];
+    Object.entries(yearData).forEach(([folderName, photos]) => {
+        if (!Array.isArray(photos)) return;
+        const picked = photos.slice(0, PHOTOS_PER_FOLDER);
+        picked.forEach(src => result.push({ src, label: folderName }));
+    });
+    return result;
+}
+
+/**
+ * Render elemen slide + dot ke DOM berdasarkan heroSlideData.
+ */
+function buildHeroSlideshow() {
+    const container = document.getElementById('heroSlideshow');
+    const dotsWrap  = document.getElementById('slideDots');
+    if (!container || !dotsWrap) return;
+
+    heroSlideData = buildSlideData();
+    if (heroSlideData.length === 0) return;
+
+    // Kosongkan dulu
+    container.innerHTML = '';
+    dotsWrap.innerHTML  = '';
+
+    heroSlideData.forEach(({ src, label }, i) => {
+        // Slide
+        const slide = document.createElement('div');
+        slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
+
+        const img = document.createElement('img');
+        img.src     = src;
+        img.alt     = label;
+        img.loading = i === 0 ? 'eager' : 'lazy';
+        img.onerror = function () {
+            this.src = 'https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM';
+        };
+        slide.appendChild(img);
+        container.appendChild(slide);
+
+        // Dot
+        const dot = document.createElement('button');
+        dot.className  = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Slide ${i + 1} — ${label}`);
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            // Reset timer agar tidak loncat terlalu cepat setelah klik manual
+            stopSlideshow();
+            startSlideshow();
+        });
+        dotsWrap.appendChild(dot);
+    });
+
+    // Set label awal
+    updateSlideLabel(0);
+}
+
+function updateSlideLabel(index) {
+    const label = document.getElementById('heroSlideLabel');
+    if (label && heroSlideData[index]) {
+        label.textContent = heroSlideData[index].label;
+    }
+}
+
+function goToSlide(index) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots   = document.querySelectorAll('.slide-dot');
+    if (!slides.length) return;
+
+    slides[currentSlide]?.classList.remove('active');
+    dots[currentSlide]?.classList.remove('active');
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide]?.classList.add('active');
+    dots[currentSlide]?.classList.add('active');
+    updateSlideLabel(currentSlide);
+}
+
+function nextSlide() { goToSlide(currentSlide + 1); }
+
+function startSlideshow() {
+    if (slideshowTimer) return;
+    slideshowTimer = setInterval(nextSlide, SLIDE_INTERVAL_MS);
+}
+
+function stopSlideshow() {
+    clearInterval(slideshowTimer);
+    slideshowTimer = null;
+}
+
+// Pause saat hover, lanjut saat mouse pergi
+const imgFrame = document.querySelector('.img-frame');
+if (imgFrame) {
+    imgFrame.addEventListener('mouseenter', stopSlideshow);
+    imgFrame.addEventListener('mouseleave', startSlideshow);
+}
+
+// Mulai slideshow — digabung dengan INITIAL RUN di bawah
+
+// ===========================
 // ANNOUNCEMENT BAR
 // ===========================
 function closeAnnouncement() {
@@ -108,8 +230,20 @@ function closeAnnouncement() {
         bar.style.maxHeight = '0';
         bar.style.opacity = '0';
     });
-    setTimeout(() => bar.remove(), 400);
+    setTimeout(() => {
+        bar.remove();
+        syncAnnouncementOffset();
+    }, 400);
 }
+
+function syncAnnouncementOffset() {
+    const bar = document.getElementById('announcementBar');
+    const offset = bar ? bar.offsetHeight : 0;
+    document.documentElement.style.setProperty('--announcement-top-offset', `${offset}px`);
+}
+
+window.addEventListener('DOMContentLoaded', syncAnnouncementOffset);
+window.addEventListener('resize', syncAnnouncementOffset);
 
 // ===========================
 // NAVBAR: Scroll Shrink + Active Section
@@ -228,6 +362,45 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const statCounters = document.querySelectorAll('.stat-number[data-target]');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const stat = entry.target;
+        animateCounter(stat);
+        statsObserver.unobserve(stat);
+    });
+}, { threshold: 0.5 });
+
+function animateCounter(el) {
+    const target = Number(el.dataset.target);
+    if (Number.isNaN(target)) return;
+
+    const suffix = el.dataset.suffix || '';
+    const duration = Number(el.dataset.duration) || 1200;
+    const start = performance.now();
+
+    function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(progress * target);
+        el.textContent = `${value}${suffix}`;
+        if (progress < 1) {
+            requestAnimationFrame(tick);
+        } else {
+            el.textContent = `${target}${suffix}`;
+        }
+    }
+
+    requestAnimationFrame(tick);
+}
+
+statCounters.forEach(stat => {
+    if (!stat.textContent.trim()) {
+        stat.textContent = '0';
+    }
+    statsObserver.observe(stat);
+});
 
 // ===========================
 // MODAL KEGIATAN SYSTEM
@@ -489,6 +662,8 @@ document.addEventListener('keydown', (e) => {
 // INITIAL RUN
 // ===========================
 window.addEventListener('DOMContentLoaded', () => {
+    buildHeroSlideshow(); // bangun slideshow dari driveData
+    startSlideshow();
     renderDrive();
-    onScroll(); // Set initial state
+    onScroll();
 });

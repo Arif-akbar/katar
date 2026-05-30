@@ -25,95 +25,20 @@
   </head>
 
   <body>
-    <!-- ============================
-         TOP BAR: PENGUMUMAN
-    ============================= -->
-    <div class="announcement-bar" id="announcementBar">
-      <div class="announcement-inner">
-        <span class="ann-icon">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-        </span>
-        <span class="ann-text"
-          >Rapat Koordinasi Bulanan - Minggu, 7 Juni 2026 - Balai Desa, 19.00
-          WIB</span
-        >
-      </div>
-      <button
-        class="ann-close"
-        onclick="closeAnnouncement()"
-        aria-label="Tutup pengumuman"
-      >
-        &times;
-      </button>
-    </div>
-
-    <!-- ============================
-         NAVBAR
-    ============================= -->
     <header class="navbar" id="navbar">
       <div class="container nav-wrapper">
-        <a href="#home" class="logo" aria-label="Beranda">
-          FREEDOM<span class="logo-dot">.</span>
-          <small>Manisharjo</small>
-        </a>
+        <!-- LOGO -->
+        <a href="#home" class="logo" aria-label="Beranda"> FREEDOM </a>
 
-        <nav
-          class="nav-menu"
-          id="navMenu"
-          role="navigation"
-          aria-label="Menu utama"
-        >
-          <a href="#home" class="nav-link active" data-section="home"
-            >Beranda</a
-          >
-          <a href="#visi" class="nav-link" data-section="visi">Visi Misi</a>
-          <a href="#kegiatan" class="nav-link" data-section="kegiatan"
-            >Kegiatan</a
-          >
-          <a href="#pengurus" class="nav-link" data-section="pengurus"
-            >Pengurus</a
-          >
-          <a href="#galeri" class="nav-link" data-section="galeri">Galeri</a>
-          <a href="#lokasi" class="nav-link" data-section="lokasi">Lokasi</a>
-          <button
-            class="theme-toggle theme-toggle-mobile"
-            id="themeToggleMobile"
-            type="button"
-            aria-label="Ganti mode terang"
-            aria-pressed="false"
-          >
-            <span class="theme-toggle-icon" aria-hidden="true"></span>
-            <span class="theme-toggle-label">Mode Gelap/Terang</span>
-          </button>
-        </nav>
-
+        <!-- TOGGLE MODE -->
         <button
           class="theme-toggle"
           id="themeToggle"
           type="button"
-          aria-label="Ganti mode terang"
+          aria-label="Ganti Tema"
           aria-pressed="false"
         >
-          <span class="theme-toggle-icon" aria-hidden="true"></span>
-        </button>
-
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Buka menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
+          <span class="theme-toggle-icon"></span>
         </button>
       </div>
     </header>
@@ -153,17 +78,19 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-number">50+</span>
+              <span class="stat-number" data-target="50">0</span>
               <span class="stat-label">Anggota Aktif</span>
             </div>
             <div class="stat-divider" aria-hidden="true"></div>
             <div class="stat-item">
-              <span class="stat-number">10</span>
+              <span class="stat-number" data-target="10">0</span>
               <span class="stat-label">Program Kerja</span>
             </div>
             <div class="stat-divider" aria-hidden="true"></div>
             <div class="stat-item">
-              <span class="stat-number">5 Th</span>
+              <span class="stat-number" data-target="5" data-suffix=" Th"
+                >0</span
+              >
               <span class="stat-label">Pengabdian</span>
             </div>
           </div>
@@ -171,29 +98,22 @@
 
         <div class="hero-img" aria-hidden="true">
           <div class="img-frame">
-            <img
-              src="img/hero.jpeg"
-              alt="Foto anggota Karang Taruna FREEDOM Manisharjo"
-              fetchpriority="high"
-              onerror="
-                this.src =
-                  'https://via.placeholder.com/560x420/000000/ffd700?text=FREEDOM'
-              "
-            />
+            <!-- Slideshow di-generate otomatis dari driveData["Ivent 2026"] oleh script.js -->
+            <div class="hero-slideshow" id="heroSlideshow">
+              <!-- Diisi oleh buildHeroSlideshow() -->
+            </div>
+
+            <!-- Label nama event aktif -->
             <div class="img-badge">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
-              Desa Manisharjo
+              <span id="heroSlideLabel"></span>
             </div>
+
+            <!-- Dot indicators — diisi otomatis -->
+            <div class="slide-dots" id="slideDots"></div>
           </div>
         </div>
       </div>
@@ -669,25 +589,7 @@
                 </p>
               </div>
             </div>
-            <div class="location-detail-row">
-              <span class="loc-icon" aria-hidden="true">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </span>
-              <div>
-                <strong>Sekretariat</strong>
-                <p>Senin - Jumat, 18.00 - 21.00 WIB</p>
-              </div>
-            </div>
+
             <div class="location-actions">
               <a
                 href="https://maps.app.goo.gl/f5u6bpwCPXjp7rHX7"
@@ -739,20 +641,20 @@
     ============================= -->
     <footer class="footer">
       <div class="container footer-inner">
-        <div class="footer-brand">
+        <!-- <div class="footer-brand">
           <span class="footer-logo">FREEDOM<span>.</span></span>
           <p>
             Karang Taruna Manisharjo<br />Bendosari - Sukoharjo - Jawa Tengah
           </p>
-        </div>
-        <div class="footer-links">
+        </div> -->
+        <!-- <div class="footer-links">
           <a href="#home">Beranda</a>
           <a href="#visi">Visi Misi</a>
           <a href="#kegiatan">Kegiatan</a>
           <a href="#pengurus">Pengurus</a>
           <a href="#galeri">Galeri</a>
           <a href="#lokasi">Lokasi</a>
-        </div>
+        </div> -->
         <div class="footer-bottom">
           <p>
             &copy; 2026 Karang Taruna FREEDOM Manisharjo. Dibuat dengan semangat
@@ -797,23 +699,6 @@
         </span>
         <span class="bnav-label">Kegiatan</span>
       </a>
-      <a href="#galeri" class="bnav-item" data-section="galeri">
-        <span class="bnav-icon" aria-hidden="true">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-        </span>
-        <span class="bnav-label">Galeri</span>
-      </a>
       <a href="#pengurus" class="bnav-item" data-section="pengurus">
         <span class="bnav-icon" aria-hidden="true">
           <svg
@@ -832,6 +717,24 @@
         </span>
         <span class="bnav-label">Pengurus</span>
       </a>
+      <a href="#galeri" class="bnav-item" data-section="galeri">
+        <span class="bnav-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </span>
+        <span class="bnav-label">Galeri</span>
+      </a>
+
       <a href="#lokasi" class="bnav-item" data-section="lokasi">
         <span class="bnav-icon" aria-hidden="true">
           <svg
