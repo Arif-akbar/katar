@@ -20,7 +20,7 @@ const kegiatanDetail = {
 // DATA GALERI (Simulasi Folder Drive)
 // ===========================
 const driveData = {
-    "Ivent 2025": {
+    "Event 2025": {
         "Futsal": [
             "img/gallery/2025/futsal/1.jpeg",
             "img/gallery/2025/futsal/2.jpeg",
@@ -47,7 +47,7 @@ const driveData = {
             "img/gallery/2025/pentas-seni/5.jpeg"
         ]
     },
-    "Ivent 2026": {
+    "Event 2026": {
         "Kerja Bakti Masjid": [
             "img/gallery/2026/kerja-bakti-masjid/1.jpeg",
             "img/gallery/2026/kerja-bakti-masjid/2.jpeg",
