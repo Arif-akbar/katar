@@ -1,6 +1,7 @@
 # Editor / IDE lokal
 .vscode/
 .idea/
+img/
 
 # File sistem operasi
 .DS_Store

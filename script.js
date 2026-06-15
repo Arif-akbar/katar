@@ -92,6 +92,17 @@ const driveData = {
             "img/gallery/2026/qurban/23.JPG",
             "img/gallery/2026/qurban/24.JPG",
             "img/gallery/2026/qurban/25.JPG"
+        ],
+        "Pembuatan Petunjuk Jalan": [
+            "img/gallery/2026/pembuatan-petunjuk-jalan/1.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/2.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/3.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/4.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/5.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/6.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/7.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/8.jpeg",
+            "img/gallery/2026/pembuatan-petunjuk-jalan/9.jpeg"
         ]
     }
 };
